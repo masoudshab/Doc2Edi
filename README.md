@@ -1,6 +1,6 @@
 # Doc2Edi
 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![alt text](https://github.com/masoudshab/Doc2Edi/blob/first_push/data_assets/edi%20engines.png)
 
 ## First Engine: 
 ## Extracting Data from Document PDF Files Using GCP and Google Document AI
@@ -22,13 +22,20 @@ NOTE: for this project I used Form Parser from G Doc AI
 
 python doc_ai_table.py --pdf <pdf_path> --folder <output_path>
 
+
+
 ## Second Engine: 
 ## Converting Data into EDI 211 Transmission Files
 
 ### Steps for Engine-2  
 
+1- Edi Fields Finder 
+2- Find Best Edi Field & Process
+3- DQ Checks & Valid Values
+4- Put in EDI 211 Format
 
-1- required fields for EDI 211:
+
+NOTE: required fields for EDI 211:
 • Shipment ID number
 • Date and time (of pick-up / delivery)
 • Status report request (upon delivery)
@@ -41,6 +48,6 @@ python doc_ai_table.py --pdf <pdf_path> --folder <output_path>
 
 
 # Resources:
-1) Google Cloud solution:
-2) Document AI tutorial
-3) How to setup my Doc AI project: https://codelabs.developers.google.com/codelabs/docai-ocr-python#0 
+1) Document AI tutorial: https://cloud.google.com/document-ai/
+2) How to setup my Doc AI project: https://codelabs.developers.google.com/codelabs/docai-ocr-python#0 
+3) repo used for the first engine is from: https://github.com/anirbankonar123/documentai 
