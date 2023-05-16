@@ -26,6 +26,7 @@ from typing import Sequence
 
 from google.api_core.client_options import ClientOptions
 from google.cloud import documentai
+# from google.cloud import aiplatform_v1 as documentai
 from typing import List, Sequence
 import pandas as pd
 import os
@@ -49,7 +50,7 @@ file_path = args["pdf"]
 project_id= 'oko2-386015'
 location = 'us' # Format is 'us' or 'eu'
 processor_id = 'f29e90f280aa04e0' # Create processor in Cloud Console
-file_path = r'C:\Users\Shahed\OneDrive\Documents\HAWB3441084.pdf'
+file_path = r'C:\OKO\source_pdfs\HAWB (1).pdf'
 mime_type = 'application/pdf'
 
 def get_table_data(
@@ -198,5 +199,5 @@ def layout_to_text(layout: documentai.Document.Page.Layout, text: str) -> str:
         response += text[start_index:end_index]
     return response
 
-process_document_form_sample(project_id, location, processor_id, file_path,mime_type)
+process_document_form_sample(project_id, location, processor_id, file_path, mime_type)
 

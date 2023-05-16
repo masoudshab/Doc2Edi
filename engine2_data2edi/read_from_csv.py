@@ -8,13 +8,15 @@ from dateutil.parser import parse
 
 
 # Get the current working directory
-cwd = os.getcwd()
+# cwd = os.getcwd()
 
 # Navigate to the parent directory
-parent_dir = os.path.dirname(cwd)
+# parent_dir = os.path.dirname(cwd)
 
 # Navigate to a subdirectory inside the parent directory
-data_dir = os.path.join(parent_dir, 'OkoDocAI\\data_assets')
+data_dir = os.path.join('C:\\OKO\\Doc2Edi\\data_assets')
+
+print(data_dir)
 
         
 edi_field_map = {
@@ -400,6 +402,11 @@ def convertToValidValues(edi_field, edi_field_best_item):
     
     return edi_field_best_item
 
+# TODO: 0
+# correct the directory to data_asset
+# for dictionary, use .get() instead of []
+# change this python file name frm read_from_csv
+
 
 # TODO-1: 
 # "Pickup:": "Wednesday, May 3, 2023 3:00 PM-5:00 PM", 
@@ -452,7 +459,9 @@ def buildEDI211(shipment_data):
 
 # Iterate through all files in the directory with a .json extension and run Engine 2's components in squential way (DAG pipeline)
 processed_files = {}
+
 for file in glob.glob(os.path.join(data_dir, "*.json")):
+    # print(file)
     with open(file, "r") as f:
         print(f"opened {file} ...... ")
         json_data = json.load(f)
